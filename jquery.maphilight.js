@@ -156,6 +156,9 @@
 					shape = shape_from_area(this);
 					add_shape_to(canvas, shape[0], shape[1], area_options, "highlighted");
 				}
+				if (options.callback) {
+					options.callback(e)
+				}
 			}
 			
 			if(options.alwaysOn) {
@@ -201,6 +204,8 @@
 		strokeOpacity: 1,
 		strokeWidth: 1,
 		fade: true,
-		alwaysOn: false
+		alwaysOn: false,
+		callback: false
 	};
 })(jQuery);
+
